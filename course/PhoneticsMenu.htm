@@ -123,7 +123,7 @@ function doClose() {
 function displaySection() {
 
 if (this.status == open) {
-      toprint = (this.section.length > 0) ? '<A HREF="javascript:pointers[' + this.number + '].close()" TARGET="_self"><img src="course/open.gif" border=0></A> ' : '';
+      toprint = (this.section.length > 0) ? '<A HREF="javascript:pointers[' + this.number + '].close()" TARGET="_self"><img src="https://d3uxfe7dw0hhy7.cloudfront.net/acip/assets/course/open.gif" border=0></A> ' : '';
       document.write("<LI>", this.title.link(this.link), " ");
       document.write(toprint.fontsize(2));
       document.write("<UL>");
@@ -133,7 +133,7 @@ if (this.status == open) {
       }
       document.write("</UL>");
    } else {
-      toprint = (this.section.length > 0) ? ' <A HREF="javascript:pointers[' + this.number + '].open()" TARGET="_self"><img src="course/closed.gif" border=0></A> ' : '';
+      toprint = (this.section.length > 0) ? ' <A HREF="javascript:pointers[' + this.number + '].open()" TARGET="_self"><img src="https://d3uxfe7dw0hhy7.cloudfront.net/acip/assets/course/closed.gif" border=0></A> ' : '';
       document.write("<LI>",this.title.link(this.link), " ");
       document.write(toprint.fontsize(2));
    }
