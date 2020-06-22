@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+   <script src="js/recorder.js"> </script>
+   <script src="js/course_recorder.js"></script>
+
+     <title>A Course in Phonetics: the recorder</title>
+</head>
+<body>
+<div id="container">
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+  <div id="recorder"></div>
+
+<h1>About the web recorder</h1>
+
+<IMG style="float:right" class="border" src="appendix/using_the_site/recorder.jpg">
+<p>Most <span title="ones that can handleHTML5">browsers</span> offer to open a little audio recorder ap on some of the pages of this web site (including this one - check for the "deny"/"allow" buttons at the top of the page).</p> 
+
+<p>The hope is that it will be useful to you to hear yourself as you attempt to produce the examples given on these pages. In fact, some phonetics teachers conduct a "performance exam" in which students are tested on their ability to produce the sounds of the IPA.</p>
+
+<h2>Notes</h2>
+<p>(1) The recorder is a "client side" application.  It does not send your audio recordings to any server. We do not want these recordings and have set up the recorder so that there is no way to save the recordings you make with this recorder even on your own computer. They don't even exist as temporary files on your disk.  So when you record again, or move on to another page, or close the window, the audio samples are gone.</p>
+<p>(2) If you have trouble getting the recorder to work, we have a few suggestions:</p>
+<p class="indent">(A) Check your microphone in another application, or in the computer's control panel or system preferences.  Make sure that the computer can hear you.</p>
+<p class="indent">(B) Upgrade your browser.  The recorder only works in browsers that support HTML5.</p>
+<p class="indent">(C) Check the audio settings in the browser.  Any page that wants to use the recorder will ask for permission to do so, but your privacy settings (under "preferences/advanced/privacy/content settings/media") may be set to prevent web pages from getting access to your microphone or (heaven-forbid) your camera! and this may keep the recorder from opening.</p>
+<p class="indent">(D) Restart the browser.  We have seen situations where the recorder stops working, but is miraculously restored to functionality by closing the browser and starting over.  It is a pain, but if it used to work and now it doesn't, then start over.</p>
+<p>(3) We <em>really</em> don't want to capture video from your camera, but you might be interested to know that once you say "allow" to the recorder, it would be super-easy to record a continuous stream of audio and video from your machine. Seems pretty creepy, so ...</p>
+<p>(4) Here is the source code that is used on this web page, in case you want to know exactly what is happening with this recorder or want to add something like this to your own web pages:
+<blockquote>
+First, there is some html code to <span title="with the help of some .css styling">put the recorder box at the bottom of the page</span>. 
+<pre>
+  &lt;audio id="recorded_audio" controls autoplay&gt; &lt;/audio&gt;&lt;br&gt;
+  &lt;input onclick="startRecording(this)" type="button" value="start recording" /&gt;
+  &lt;input onclick="stopRecording(this)" type="button" value="stop recording and play" /&gt;
+  &lt;a href="about_the_recorder.html" style="float:right;margin-right:10px"&gt;?&lt;/a&gt;
+</pre>
+
+The rest is JavaScript. The file <a href="js/course_recorder.js" target="_blank">"<u>course_recorder.js</u>"</a> contains the "startRecording" and "stopRecording" functions that place audio from your microphone into this html &lt;audio&gt; object.</p>  
+
+<p>The course_recorder functions are built using the framework defined in <a href="js/recorder.js" target="_blank">"<u>recorder.js</u>"</a> and <a href="js/recorderWorker.js" target="_blank">"<u>recorderWorker.js</u>"</a>. See the GitHub examples <a href="https://github.com/mattdiamond/Recorderjs" target="_blank"><u>here</u></a>.</p>
+
+<p> So now you are all set to add a recorder to your web pages, but we also wanted to be fully transparent about how our audio recorder works.</p>
+</blockquote>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</div>
+</div>
+</div>
+</body></HTML>

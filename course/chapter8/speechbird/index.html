@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+     <title>speech synthesis</title>
+</head>
+<body>
+<div id="container">
+
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+<h1>Chapter 8 - Speech synthesis demo</h1>
+<p>Speech sounds can be minimally specified in terms of a small set of parameters, each of which can be described in terms of how they are made (physiological characteristics), or their physical (acoustic) characteristics.</p>
+<p>Some of these parameters are isolated in the synthesized speech tokens in this table. For example, token number 1 (linked in the column labeled "1") is composed of a monotone voice with only a first formant resonance frequency.  When you look at the spectrogram of this utterance, there is only one formant. Token 4 combines the first three formants, token 5 is composed of only stop release burst noises and fricatives, and finally in token 7 the voice has normal fundamental frequency variation.</p>
+
+<p style="font-size:0.8em">This speech was synthesized in 1971 by Peter Ladefoged on a synthesizer at UCLA. The values of the parameters were a modified version of a set provided by John Holmes.</p>
+
+<table border="1" cellpadding="3" cellspacing="2" width="89">
+<tr><th></th><th>PHYSIOLOGICAL</th><th>ACOUSTIC</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th></tr>
+
+<tr><td>1</td> <td>Rate of vibration of the vocal folds</td> <td>Fundamental frequency</td>
+<td></td>
+<td></td>		
+<td></td>		
+<td></td>		
+<td></td>
+<td></td>
+<td rowspan="9" bgcolor="lightblue"><button type="button" onclick="document.getElementById('aud8').play();"
+      oncontextmenu="showspec('course/chapter8/speechbird/Bird(full).png',event);return false;"/></button></td>
+</tr>
+
+<tr><td>2</td> <td>First resonance of the vocal tract</td> <td>Formant 1 frequency</td>	
+<td rowspan="2" bgcolor="lightblue"> 
+<button type="button" onclick="document.getElementById('aud1').play();"
+      oncontextmenu="showspec('course/chapter8/speechbird/Bird(F1).png',event);return false;"/>
+      <div class="noSelect"> </div>
+   </button>
+</td>
+<td></td>
+<td></td>		
+<td rowspan="6" bgcolor="lightblue"><button type="button" onclick="document.getElementById('aud4').play();" oncontextmenu="showspec('course/chapter8/speechbird/Bird(F1F2F3).png',event);return false;"/>
+      <div class="noSelect"> </div>
+   </button></td>
+<td></td>
+<td rowspan="8" bgcolor="lightblue"><button type="button" onclick="document.getElementById('aud7').play();" oncontextmenu="showspec('course/chapter8/speechbird/Bird(monotone).png',event);return false;"/>
+      <div class="noSelect"></div>
+   </button></td>
+</tr>
+
+<tr><td>3</td> <td></td><td>Formant 1 amplitude</td>
+<td></td>		
+<td></td>
+<td></td>
+</tr>
+
+<tr><td>4</td> <td nowrap>Second resonance of the vocal tract</td><td>Formant 2 frequency</td>
+<td></td>
+<td rowspan="2" bgcolor="lightblue">   <button type="button" onclick="document.getElementById('aud2').play();" oncontextmenu="showspec('course/chapter8/speechbird/Bird(F2).png',event);return false;"/>
+      <div class="noSelect"> </div>
+   </button>
+</td>
+<td></td>		
+<td></td>
+</tr>
+
+<tr><td>5</td> <td></td> <td>Formant 2 amplitude</td>	
+<td></td>
+<td></td>		
+<td></td>
+</tr>
+
+<tr><td>6</td> <td>Third resonance of the vocal tract</td><td>Formant 3 frequency</td>
+<td></td>
+<td></td>
+<td rowspan="2" bgcolor="lightblue"><button type="button" onclick="document.getElementById('aud3').play();" oncontextmenu="showspec('course/chapter8/speechbird/Bird(F3).png',event);return false;"/>
+      <div class="noSelect"> </div>
+   </button></td>
+<td></td>
+</tr>
+
+<tr><td>7</td> <td></td><td>Formant 3 amplitude</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr><td>8</td><td>Fricative and stop bursts</td><td nowrap>Center of noise frequency</td>
+<td></td>
+<td></td>
+<td></td>		
+<td></td>		
+<td rowspan="2" bgcolor="lightblue"><button type="button" onclick="document.getElementById('aud6').play();" oncontextmenu="showspec('course/chapter8/speechbird/Bird(fricatives).png',event);return false;"/>
+      <div class="noSelect"> </div>
+   </button></td>
+</tr>
+
+<tr> <td>9</td> <td></td><td>Amplitude  of noise</td>	
+<td></td>
+<td></td>
+<td></td>		
+<td></td>		
+</tr>
+</table>
+
+<audio id="aud1" preload="none">
+   <source src="course/chapter8/speechbird/Bird(F1).wav" type="audio/wav"/>
+   <source src="course/chapter8/speechbird/Bird(F1).mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud2" preload="none">
+   <source src="course/chapter8/speechbird/Bird(F2).wav" type="audio/wav"/>
+   <source src="course/chapter8/speechbird/Bird(F2).mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud3" preload="none">
+   <source src="course/chapter8/speechbird/Bird(F3).wav" type="audio/wav"/>
+   <source src="course/chapter8/speechbird/Bird(F3).mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud4" preload="none">
+   <source src="course/chapter8/speechbird/Bird(F1F2F3).wav" type="audio/wav"/>
+   <source src="course/chapter8/speechbird/Bird(F1F2F3).mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud5" preload="none">
+   <source src="course/chapter8/speechbird/Bird(F1F2F3&c).wav" type="audio/wav"/>
+   <source src="course/chapter8/speechbird/Bird(F1F2F3&c).mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud6" preload="none">
+   <source src="course/chapter8/speechbird/Bird(fricatives).wav" type="audio/wav"/>
+   <source src="course/chapter8/speechbird/Bird(fricatives).mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud7" preload="none">
+   <source src="course/chapter8/speechbird/Bird(monotone).wav" type="audio/wav"/>
+   <source src="course/chapter8/speechbird/Bird(monotone).mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud8" preload="none">
+   <source src="course/chapter8/speechbird/Bird(full).wav"  type="audio/wav"/>
+   <source src="course/chapter8/speechbird/Bird(full).mp3" type="audio/mpeg" />
+</audio>
+
+<div class="spectro" id="specdiv"> <img id="spectrogram" src="" alt="" onload="position_sgram()"></div>
+</div>
+</div>
+</div>
+</body>
+</html>

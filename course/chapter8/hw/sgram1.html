@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+   <script src="js/exercises.js"></script>
+   <script src="js/hwexercise8L.js"></script>
+
+     <title>Chapter 8 - exercise L</title>
+</head>
+<body onload="initialize();">
+<div id="container">
+
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+
+<h1>Chapter 8 - Homework Exercise L</h1>
+
+<p>This spectrogram below is of the utterance "A stitch in time saves nine".  You can click the "play the whole utterance" button to hear it.</p>
+
+<p>Use the numbers printed over the spectrogram to answer the following questions.</p>
+
+<p>Try to guess based only on the appearance of the spectrogram, but if you are stumped you can click on the spectrogram to hear the numbered parts.</p>
+
+<p>Which number corresponds to the <span id="question"></span>?  <input id="answerbox" type="text" onkeydown="if (event.keyCode == 13) check_answer()"> <span id="feedback"></span></p>
+<p style="font-size:small">Correct: <span id="correct">0</span> ---- Run: <span id="run">0</span></p>
+
+<img src="course/chapter8/hw/sgramreading1.png" usemap="#map1" class="border" width="1032">
+
+<input type="button" onclick="document.getElementById('wholefile').play();" value="play the whole utterance">
+
+<map name="map1">
+<area shape="rect" coords="88,7,113,250" onclick="document.getElementById('aud1').play();">
+<area shape="rect" coords="114,7,154,250" onclick="document.getElementById('aud2').play();">
+<area shape="rect" coords="155,7,180,250" onclick="document.getElementById('aud3').play();">
+<area shape="rect" coords="181,7,215,250" onclick="document.getElementById('aud4').play();">
+<area shape="rect" coords="216,7,262,250" onclick="document.getElementById('aud5').play();">
+<area shape="rect" coords="263,7,289,250" onclick="document.getElementById('aud6').play();">
+<area shape="rect" coords="290,7,337,250" onclick="document.getElementById('aud7').play();">
+<area shape="rect" coords="338,7,379,250" onclick="document.getElementById('aud8').play();">
+<area shape="rect" coords="380,7,479,250" onclick="document.getElementById('aud9').play();">
+<area shape="rect" coords="480,7,513,250" onclick="document.getElementById('aud10').play();">
+<area shape="rect" coords="514,7,567,250" onclick="document.getElementById('aud11').play();">
+<area shape="rect" coords="568,7,650,250" onclick="document.getElementById('aud12').play();">
+<area shape="rect" coords="651,7,705,250" onclick="document.getElementById('aud13').play();">
+<area shape="rect" coords="706,7,742,250" onclick="document.getElementById('aud14').play();">
+<area shape="rect" coords="743,7,911,250" onclick="document.getElementById('aud15').play();">
+</map>
+
+<audio id="aud1" preload="none">
+  <source id="wavsrc" src="course/chapter8/hw/sent1/1.wav" type="audio/wav" />
+  <source id="mp3src" src="course/chapter8/hw/sent1/1.mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud2" preload="none">
+  <source id="wavsrc" src="course/chapter8/hw/sent1/2.wav" type="audio/wav" />
+  <source id="mp3src" src="course/chapter8/hw/sent1/2.mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud3" preload="none">
+  <source id="wavsrc" src="course/chapter8/hw/sent1/3.wav" type="audio/wav" />
+  <source id="mp3src" src="course/chapter8/hw/sent1/3.mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud4" preload="none">
+  <source id="wavsrc" src="course/chapter8/hw/sent1/4.wav" type="audio/wav" />
+  <source id="mp3src" src="course/chapter8/hw/sent1/4.mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud5" preload="none">
+  <source id="wavsrc" src="course/chapter8/hw/sent1/5.wav" type="audio/wav" />
+  <source id="mp3src" src="course/chapter8/hw/sent1/5.mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud6" preload="none">
+  <source id="wavsrc" src="course/chapter8/hw/sent1/6.wav" type="audio/wav" />
+  <source id="mp3src" src="course/chapter8/hw/sent1/6.mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud7" preload="none">
+  <source id="wavsrc" src="course/chapter8/hw/sent1/7.wav" type="audio/wav" />
+  <source id="mp3src" src="course/chapter8/hw/sent1/7.mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud8" preload="none">
+  <source id="wavsrc" src="course/chapter8/hw/sent1/8.wav" type="audio/wav" />
+  <source id="mp3src" src="course/chapter8/hw/sent1/8.mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud9" preload="none">
+  <source id="wavsrc" src="course/chapter8/hw/sent1/9.wav" type="audio/wav" />
+  <source id="mp3src" src="course/chapter8/hw/sent1/9.mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud10" preload="none">
+  <source id="wavsrc" src="course/chapter8/hw/sent1/10.wav" type="audio/wav" />
+  <source id="mp3src" src="course/chapter8/hw/sent1/10.mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud11" preload="none">
+  <source id="wavsrc" src="course/chapter8/hw/sent1/11.wav" type="audio/wav" />
+  <source id="mp3src" src="course/chapter8/hw/sent1/11.mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud12" preload="none">
+  <source id="wavsrc" src="course/chapter8/hw/sent1/12.wav" type="audio/wav" />
+  <source id="mp3src" src="course/chapter8/hw/sent1/12.mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud13" preload="none">
+  <source id="wavsrc" src="course/chapter8/hw/sent1/13.wav" type="audio/wav" />
+  <source id="mp3src" src="course/chapter8/hw/sent1/13.mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud14" preload="none">
+  <source id="wavsrc" src="course/chapter8/hw/sent1/14.wav" type="audio/wav" />
+  <source id="mp3src" src="course/chapter8/hw/sent1/14.mp3" type="audio/mpeg" />
+</audio>
+<audio id="aud15" preload="none">
+  <source id="wavsrc" src="course/chapter8/hw/sent1/15.wav" type="audio/wav" />
+  <source id="mp3src" src="course/chapter8/hw/sent1/15.mp3" type="audio/mpeg" />
+</audio>
+<audio id="wholefile" preload="none">
+  <source id="wavsrc" src="course/chapter8/hw/sgramreading1.wav" type="audio/wav" />
+  <source id="mp3src" src="course/chapter8/hw/sgramreading1.mp3" type="audio/mpeg" />
+</audio>
+
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,430 @@
+<HEAD>
+
+<base target="main">
+<SCRIPT LANGUAGE="JavaScript">
+
+//SET A NEW COOKIE
+//Arguments:
+//  name: cookie name (string)
+//  value: cookie value (unencoded string)
+//  expiry: expiry date (date)
+//  path: document path (string)
+//  domain: document domain (string)
+//  secure: secure required? (boolean)
+
+function setCookie(name,value,expiry,path,domain,secure) {
+
+   var nameString = name + "=" + value;
+   var expiryString = (expiry == null) ? "" : "; expires=" + expiry.toGMTString();
+   var pathString = (path == null) ? "" : "; path=" + path;
+   var domainString = (path == null) ? "" :"; domain=" + domain;
+   var secureString = (secure) ? "; secure" : "";
+
+   document.cookie = nameString + expiryString + pathString + domainString + secureString;
+
+}
+
+//GET A NEW COOKIE
+//Arguments:
+//  name: cookie name (string)
+
+function getCookie(name) {
+   var cookieFound = false;
+   var start = 0;
+   var end = 0;
+   var cookieString = document.cookie;
+
+   var i = 0;
+
+   //LOOK FOR name IN cookieString
+   while (i <= cookieString.length) {
+      start = i;
+      end = start + name.length;
+      if (cookieString.substring(start,end) == name) {
+         cookieFound = true;
+         break;
+      }
+      i++;
+   }
+
+   //CHECK IF NAME WAS FOUND
+   if (cookieFound) {
+      start = end + 1;
+      end = cookieString.indexOf(";",start);
+      if (end < start)
+         end = cookieString.length;
+      return unescape(cookieString.substring(start,end));
+   }
+
+   //NAME WAS NOT FOUND
+   return "";
+
+}
+
+//DELETE A COOKIE
+//Arguments:
+//  name: cookie name (string);
+
+function deleteCookie(name) {
+
+   var expires = new Date();
+   expires.setTime (expires.getTime() - 1);
+
+   setCookie(name,"Delete Cookie",expires,null,null,false);
+
+}
+
+// MENU MANAGER STARTS HERE
+
+var open = "o";
+var closed = "c";
+var pointers = new Array();
+var toExpire = new Date(); toExpire.setTime(toExpire.getTime() + 1000*60*60*24);
+
+function sectionObj() {
+
+   this.section = new Array();
+   this.title = "";
+   this.link = "";
+   this.display = displaySection;
+   this.open = doOpen;
+   this.close = doClose;
+   pointers[pointers.length] = this;
+   this.number = pointers.length - 1;
+   if (this.number >= menu.statusString.length) { menu.statusString +=closed; }
+   this.status = menu.statusString.charAt(this.number);
+
+}
+
+function doOpen() {
+
+   this.status = open;
+   menu.statusString = "";
+   for (k = 0; k < pointers.length; k ++) {
+      menu.statusString += pointers[k].status;
+   }
+   setCookie(menu.name,menu.statusString,toExpire,null,null,false);
+   self.location = self.location;
+
+}
+
+function doClose() {
+
+   this.status = closed;
+   menu.statusString = "";
+   for (k = 0; k < pointers.length; k ++) {
+      menu.statusString += pointers[k].status;
+   }
+   setCookie(menu.name,menu.statusString,toExpire,null,null,false);
+   self.location = self.location;
+
+}
+
+function displaySection() {
+
+if (this.status == open) {
+      toprint = (this.section.length > 0) ? '<A HREF="javascript:pointers[' + this.number + '].close()" TARGET="_self"><img src="course/open.gif" border=0></A> ' : '';
+      document.write("<LI>", this.title.link(this.link), " ");
+      document.write(toprint.fontsize(2));
+      document.write("<UL>");
+      var j = 0;
+      for (j = 0; j < this.section.length; j ++) {
+         this.section[j].display();
+      }
+      document.write("</UL>");
+   } else {
+      toprint = (this.section.length > 0) ? ' <A HREF="javascript:pointers[' + this.number + '].open()" TARGET="_self"><img src="course/closed.gif" border=0></A> ' : '';
+      document.write("<LI>",this.title.link(this.link), " ");
+      document.write(toprint.fontsize(2));
+   }
+
+}
+
+function menuObj(menuName) {
+
+   this.statusString = getCookie(menuName);
+   this.name = menuName;
+   this.section = new Array();
+   this.title = "";
+   this.display = displayMenu;
+
+}
+
+function initMenu(numSections) {
+
+   for (i = 0; i < numSections; i++) {
+      this.section[i] = new sectionObj();
+   }
+
+}
+
+function displayMenu() {
+
+   document.write("<UL>");
+   for (i = 0; i < this.section.length; i ++) {
+      this.section[i].display();
+   }
+   document.write("</UL>");
+
+}
+
+var menu = new menuObj("Contents");
+
+menu.title = "Contents";
+menu.section[0] = new sectionObj();
+menu.section[0].title = "Home";
+menu.section[0].link = "index.html";
+menu.section[1] = new sectionObj();
+menu.section[1].title = " <font color=#000000><b>1:</b></font> Sounds and Languages";
+menu.section[1].link = "chapter1/chapter1.html";
+menu.section[2] = new sectionObj();
+menu.section[2].title = " <font color=#000000><b>2:</b></font> Pitch and Loudness";
+menu.section[2].link = "chapter2/chapter2.html";
+menu.section[3] = new sectionObj();
+menu.section[3].title = " <font color=#000000><b>3:</b></font> Vowel Contrasts";
+menu.section[3].link = "chapter3/chapter3.html";
+menu.section[4] = new sectionObj();
+menu.section[4].title = " <font color=#000000><b>4:</b></font> The Sounds of Vowels";
+menu.section[4].link = "chapter4/chapter4.html";
+menu.section[5] = new sectionObj();
+menu.section[5].title = " <font color=#000000><b>6:</b></font> The sounds of Consonants";
+menu.section[5].link = "chapter6/soundsvowels.html";
+menu.section[6] = new sectionObj();
+menu.section[6].title = " <font color=#000000><b>7:</b></font> Accoustic Componants of Speach";
+menu.section[6].link = "chapter7/abirdinthehand.html";
+menu.section[7] = new sectionObj();
+menu.section[7].title = " <font color=#000000><b>8:</b></font> Talking Computers";
+menu.section[7].link = "chapter8/chapter8.html";
+menu.section[8] = new sectionObj();
+menu.section[8].title = " <font color=#000000><b>11:</b></font> Making English Vowels";
+menu.section[8].link = "chapter11/chapter11.html";
+menu.section[9] = new sectionObj();
+menu.section[9].title = " <font color=#000000><b>12:</b></font> Actions of the Larynx";
+menu.section[9].link = "chapter12/chapter12.html";
+menu.section[10] = new sectionObj();
+menu.section[10].title = " <font color=#000000><b>13:</b></font> Consonants around the World";
+menu.section[10].link = "chapter13/chapter13.html";
+menu.section[11] = new sectionObj();
+menu.section[11].title = " <font color=#000000><b>14:</b></font> Vowels around the World";
+menu.section[11].link = "chapter14/chapter14.html";
+menu.section[12] = new sectionObj();
+menu.section[12].title = " <font color=#000000><b>15:</b></font> Putting Consonants and Vowels Together";
+menu.section[12].link = "chapter15/chapter15.html";
+
+menu.section[1].section[0] = new sectionObj();
+menu.section[1].section[0].title = "Consonants 1";
+menu.section[1].section[0].link = "chapter1/consonants1.html";
+menu.section[1].section[1] = new sectionObj();
+menu.section[1].section[1].title = "Consonants 2";
+menu.section[1].section[1].link = "chapter1/consonants2.html";
+menu.section[1].section[2] = new sectionObj();
+menu.section[1].section[2].title = "Clicks";
+menu.section[1].section[2].link = "chapter1/clicks.html";
+menu.section[1].section[3] = new sectionObj();
+menu.section[1].section[3].title = "Vowels";
+menu.section[1].section[3].link = "chapter1/vowels.html";
+menu.section[1].section[4] = new sectionObj();
+menu.section[1].section[4].title = "Other Symbols";
+menu.section[1].section[4].link = "chapter1/others.html";
+
+menu.section[2].section[0] = new sectionObj();
+menu.section[2].section[0].title = "<font color=#000000><b>2.1:</b></font> The tones of Standard Chinese";
+menu.section[2].section[0].link = "chapter2/chinese/recording2-1.html";
+menu.section[2].section[1] = new sectionObj();
+menu.section[2].section[1].title = "<font color=#000000><b>2.2:</b></font> The tones of Cantonese";
+menu.section[2].section[1].link = "chapter2/cantonese/recording2-2.html";
+menu.section[2].section[2] = new sectionObj();
+menu.section[2].section[2].title = "video of vocal chords";
+menu.section[2].section[2].link = "chapter2/vibrating cords/vibrating.html";
+menu.section[2].section[3] = new sectionObj();
+menu.section[2].section[3].title = "photos of vocal chords";
+menu.section[2].section[3].link = "chapter2/photos vocal cords/photos.html";
+
+menu.section[3].section[0] = new sectionObj();
+menu.section[3].section[0].title = "<font color=#000000><b>3.1:</b></font> The vowels of Spanish, Hawaiian, Swahili and Japanese";
+menu.section[3].section[0].link = "chapter3/table3.html";
+menu.section[3].section[1] = new sectionObj();
+menu.section[3].section[1].title = "<font color=#000000><b>3.2:</b></font> The vowels of American English";
+menu.section[3].section[1].link = "chapter3/amengvowels.html";
+menu.section[3].section[2] = new sectionObj();
+menu.section[3].section[2].title = "<font color=#000000><b>3.3:</b></font> The vowels of BBC English";
+menu.section[3].section[2].link = "chapter3/bbcenglish.html";
+
+menu.section[8].section[0] = new sectionObj();
+menu.section[8].section[0].title = "Tongue video";
+menu.section[8].section[0].link = "chapter11/tongue.html";
+menu.section[8].section[1] = new sectionObj();
+menu.section[8].section[1].title = "Jaw video";
+menu.section[8].section[1].link = "chapter11/movie.html";
+menu.section[8].section[2] = new sectionObj();
+menu.section[8].section[2].title = "Larynx video";
+menu.section[8].section[2].link = "chapter11/larynx.html";
+
+menu.section[9].section[0] = new sectionObj();
+menu.section[9].section[0].title = "Some voiced-voiceless pairs in Burmese";
+menu.section[9].section[0].link = "chapter12/burmese.html";
+menu.section[9].section[1] = new sectionObj();
+menu.section[9].section[1].title = "A comparison of English b,p and Spanish b,p.";
+menu.section[9].section[1].link = "chapter12/engspan.html";
+menu.section[9].section[2] = new sectionObj();
+menu.section[9].section[2].title = "Thai stops";
+menu.section[9].section[2].link = "chapter12/thai.html";
+menu.section[9].section[3] = new sectionObj();
+menu.section[9].section[3].title = "Hawaiian consonants";
+menu.section[9].section[3].link = "chapter12/hawaiian.html";
+menu.section[9].section[4] = new sectionObj();
+menu.section[9].section[4].title = "Breathy voice";
+menu.section[9].section[4].link = "chapter12/breathy.html";
+menu.section[9].section[5] = new sectionObj();
+menu.section[9].section[5].title = "Hindi stops";
+menu.section[9].section[5].link = "chapter12/hindi.html";
+menu.section[9].section[6] = new sectionObj();
+menu.section[9].section[6].title = "Gujarati murmured sounds";
+menu.section[9].section[6].link = "chapter12/gujarati.htm";
+menu.section[9].section[7] = new sectionObj();
+menu.section[9].section[7].title = "Creaky voice";
+menu.section[9].section[7].link = "chapter12/creaky.html";
+menu.section[9].section[8] = new sectionObj();
+menu.section[9].section[8].title = "Jalapa Mazatec vowels";
+menu.section[9].section[8].link = "chapter12/mazatec.html";
+menu.section[9].section[9] = new sectionObj();
+menu.section[9].section[9].title = "Voice qualities and tones in Mpi";
+menu.section[9].section[9].link = "chapter12/mpi.html";
+menu.section[9].section[10] = new sectionObj();
+menu.section[9].section[10].title = "Owerri Igbo";
+menu.section[9].section[10].link = "chapter12/igbo.html";
+menu.section[9].section[11] = new sectionObj();
+menu.section[9].section[11].title = "Quechua stops";
+menu.section[9].section[11].link = "chapter12/quechua.html";
+menu.section[9].section[12] = new sectionObj();
+menu.section[9].section[12].title = "Sindhi stops";
+menu.section[9].section[12].link = "chapter12/sindi.html";
+
+menu.section[10].section[0] = new sectionObj();
+menu.section[10].section[0].title = "Ewe fricatives";
+menu.section[10].section[0].link = "chapter13/ewe.html";
+menu.section[10].section[1] = new sectionObj();
+menu.section[10].section[1].title = "Nunngubuyu dental and alveolar stops";
+menu.section[10].section[1].link = "chapter13/nunngubuyu.html";
+menu.section[10].section[2] = new sectionObj();
+menu.section[10].section[2].title = "Hungarian palatals";
+menu.section[10].section[2].link = "chapter13/hungarian.html";
+menu.section[10].section[3] = new sectionObj();
+menu.section[10].section[3].title = "Malayalam nasals";
+menu.section[10].section[3].link = "chapter13/malayam.html";
+menu.section[10].section[4] = new sectionObj();
+menu.section[10].section[4].title = "Aleut stops";
+menu.section[10].section[4].link = "chapter13/aleut.html";
+menu.section[10].section[5] = new sectionObj();
+menu.section[10].section[5].title = "Kele and Titan bilabial and alveolar trills";
+menu.section[10].section[5].link = "chapter13/kele.html";
+menu.section[10].section[6] = new sectionObj();
+menu.section[10].section[6].title = "Southern Swedish uvular trills";
+menu.section[10].section[6].link = "chapter13/southernswedish.html";
+menu.section[10].section[7] = new sectionObj();
+menu.section[10].section[7].title = "Polish sibilants";
+menu.section[10].section[7].link = "chapter13/polish.html";
+menu.section[10].section[8] = new sectionObj();
+menu.section[10].section[8].title = "Toda sibilants";
+menu.section[10].section[8].link = "chapter13/toda.html";
+menu.section[10].section[9] = new sectionObj();
+menu.section[10].section[9].title = "Melpa laterals";
+menu.section[10].section[9].link = "chapter13/melpa.html";
+menu.section[10].section[10] = new sectionObj();
+menu.section[10].section[10].title = "Zulu laterals";
+menu.section[10].section[10].link = "chapter13/zulu.html";
+menu.section[10].section[11] = new sectionObj();
+menu.section[10].section[11].title = "Nama clicks";
+menu.section[10].section[11].link = "chapter13/nama.html";
+menu.section[10].section[12] = new sectionObj();
+menu.section[10].section[12].title = "Dental click";
+menu.section[10].section[12].link = "chapter13/newclick.htm";
+
+menu.section[11].section[0] = new sectionObj();
+menu.section[11].section[0].title = "<font color=#000000><b>14.1:</b></font> Some of the French Vowels";
+menu.section[11].section[0].link = "chapter14/french.html";
+menu.section[11].section[1] = new sectionObj();
+menu.section[11].section[1].title = "<font color=#000000><b>14.2:</b></font> Swedish Vowels";
+menu.section[11].section[1].link = "chapter14/swedish.html";
+menu.section[11].section[2] = new sectionObj();
+menu.section[11].section[2].title = "<font color=#000000><b>14.3:</b></font> German Vowels";
+menu.section[11].section[2].link = "chapter14/german.html";
+menu.section[11].section[3] = new sectionObj();
+menu.section[11].section[3].title = "<font color=#000000><b>14.4:</b></font> Scottish Gaelic Long Vowels";
+menu.section[11].section[3].link = "chapter14/gaelic.html";
+menu.section[11].section[4] = new sectionObj();
+menu.section[11].section[4].title = "<font color=#000000><b>14.5:</b></font> French Oral and Nasal Vowels";
+menu.section[11].section[4].link = "chapter14/french2.html";
+menu.section[11].section[5] = new sectionObj();
+menu.section[11].section[5].title = "<font color=#000000><b>14.6:</b></font> !X&oacute;&otilde; Vowels";
+menu.section[11].section[5].link = "chapter14/_xoo.html";
+menu.section[11].section[6] = new sectionObj();
+menu.section[11].section[6].title = "Video of Nasalised Vowels";
+menu.section[11].section[6].link = "chapter14/nasvowel.html";
+
+menu.section[12].section[0] = new sectionObj();
+menu.section[12].section[0].title = "Perception Experiment 1";
+menu.section[12].section[0].link = "chapter15/exp1.html";
+menu.section[12].section[1] = new sectionObj();
+menu.section[12].section[1].title = "Perception Experiment 2";
+menu.section[12].section[1].link = "chapter15/exp2.html";
+menu.section[12].section[2] = new sectionObj();
+menu.section[12].section[2].title = "Perception Experiment 3";
+menu.section[12].section[2].link = "chapter15/exp3.html";
+menu.section[12].section[3] = new sectionObj();
+menu.section[12].section[3].title = "Oro Win";
+menu.section[12].section[3].link = "chapter15/orowin.html";
+
+menu.section[12].section[0].section[0] = new sectionObj();
+menu.section[12].section[0].section[0].title = "Answer 1";
+menu.section[12].section[0].section[0].link = "chapter15/ans1.html";
+
+menu.section[12].section[1].section[0] = new sectionObj();
+menu.section[12].section[1].section[0].title = "Answer 2";
+menu.section[12].section[1].section[0].link = "chapter15/ans2.html";
+
+menu.section[12].section[2].section[0] = new sectionObj();
+menu.section[12].section[2].section[0].title = "Answer 3";
+menu.section[12].section[2].section[0].link = "chapter15/ans3.html";
+
+</SCRIPT>
+
+</HEAD>
+
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+</head>
+<body>
+<div id="container">
+
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+<noscript>
+The menu will only work with JavaScript enabled.
+</noscript>
+<SCRIPT LANGUAGE="JavaScript">
+menu.display();
+</SCRIPT>
+<div class="spectro" id="specdiv"> <img id="spectrogram" src="" alt="" onload="position_sgram()"></div>
+</div>
+</div>
+</div>
+</body>
+</HTML>

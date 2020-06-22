@@ -1,0 +1,69 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+   <script src="js/exercises.js"></script>
+<script>
+function list_local_items () {
+    if (localStorage.length==0) {
+       document.getElementById('list').innerHTML="No certificates were found.";
+    } else {
+       var str1 = "We found these certificates: ";
+       for (var i=0;i<localStorage.length; i++) {
+           var str2 = str1.concat(localStorage.key(i)," ");
+           str1=str2;
+       }
+       document.getElementById('list').innerHTML=str1;
+    }
+}
+
+function get_certif () {
+    var myanswer = document.getElementById('answerbox').value;
+    if (!make_png_cert(myanswer)) {
+       alert("can't find a certificate for "+myanswer);
+    }
+}
+</script>
+
+
+     <title>Extras - homework certificates</title>
+</head>
+<body onload="list_local_items()">
+<div id="container">
+
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+
+<h2>Retrieve a homework certificate</h2>
+<p>When you complete a homework exercise a PDF "certificate of completion" is generated.
+We keep a record of what you have completed in the local storage of your browser, but 
+this method is far from fool proof. You should always print, or save your certificate when it is 
+first generated.</p> 
+
+<p><span id="list"></span></p>
+
+<p>If you need to generate a copy of one of these saved certificates please enter the number here:
+</p>
+<input id="answerbox" type="text" onkeydown="if (event.keyCode == 13) get_certif()">
+</p>
+
+</div>
+</div>
+</div>
+</body></html>

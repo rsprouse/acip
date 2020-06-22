@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+   <script src="js/exercises.js"></script>
+<script>
+function example_cert() {
+   if (! localStorage.getItem('TEST')) {
+      d = new Date();
+      localStorage.setItem('TEST',d);
+   }
+   make_png_cert('TEST');
+}
+</script>
+
+     <title>Extras - online homework exercises</title>
+</head>
+<body>
+<div id="container">
+
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+
+<h1>Online Exercises</h1>
+<p>Many of the Exercises at the ends of the chapters are presented as online exercises which give feedback and provide you with a certificate of completion when you have done the exercise.</p>
+<p>Here's an example of what an online homework exercise looks like.</p> 
+<div><img src="appendix/using_the_site/hw_example.png" class="border"></div>
+<p>You enter your answer "1" or "2" in the response box. If your answer is incorrect you will see a message (on a red background) that tells you the correct answer, and you then get the same question again. You should be able to get it right now :-)</p>
+
+<p>The counters below the question keep track of how many of the questions you have answered correctly (out of the target number of correct answers), and how many correct answers in a row you currently have - your "run" (and the target run length). In the example here, the student has five correct answers (and needs ten) and currently has a run of only one.</p>  
+
+<p>In order to complete this particular exercise you need to have ten correct answers, <b>and</b> get three correct in a row.</p>
+
+
+<h2>Certificates</h2>
+<p>When you finish an exercise, the page will generate a certificate of completion that you can save or print.</p>   
+<p><input type="button" value="example certificate" onclick="example_cert()"/> <-- see what a certificate looks like.</p>
+
+<p>If you have done an exercise but then lost the certificate it may be possible to <a href="appendix/using_the_site/get_hw_cert.html"><u>get a copy</u>.</a></p>
+
+<!--
+<h2>Hacking</h2>
+<p>It isn't too hard to hack a completion certificate, but if you really don't want to learn this material why are you paying to take the course or buy the book?  The exercises are easy and will tell you the correct answers when you make mistakes. Why not just do them?</p>
+-->
+</div>
+</div>
+</div>
+</body></html>

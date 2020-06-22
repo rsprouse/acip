@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+  <script src="js/recorder.js"> </script>
+   <script src="js/course_recorder.js"></script>
+
+     <title>Mandaring Chinese tones</title>
+</head>
+<body>
+<div id="container">
+
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+<div id="recorder"></div>
+
+<h2>Mandarin Chinese tones</h2>
+
+<audio id="aud11" preload="none">
+   <source src="appendix/languages/chinese/tone/recording2.1.wav" type="audio/wav"/>
+   <source src="appendix/languages/chinese/tone/recording2.1.mp3" type="audio/mpeg" />
+</audio>
+   <p><button type="button" onclick="document.getElementById('aud11').play();"/>
+      <div class="noSelect">Play all</div></button></p>
+
+<P><IMG src="appendix/languages/chinese/tone/Chinese.gif" WIDTH="409" HEIGHT="286" class="border" usemap="#Map"></p>
+
+  <p>The IPA system of tone letters used above represents 5 levels within the speaker's pitch range, numbered 1 to 5, with 5 being the highest. The analysis shown gives a traditional description of the Chinese tones as said on these words, spoken in isolation. The first tone is said to have the values 55, the second is said to be 35, the third 214, and the fourth 51. Ifyou copy these files to Praat or Wavesurfer and make a pitch trace, you will see that it would be more accurate for this speaker on this occasion to say that the first tone is 44, the second 24, the third 212, and the fourth 52. <a href="appendix/languages/chinese/tone/chinesecomment.html">Follow this link for a further comment</a></p>
+
+
+    <map name="Map">
+<audio id="aud1" preload="none">
+   <source src="appendix/languages/chinese/tone/ch1.wav" type="audio/wav" />
+   <source src="appendix/languages/chinese/tone/ch1.mp3" type="audio/mpeg" />
+</audio>
+      <area shape="rect" coords="1,67,394,114" oncontextmenu="showspec('appendix/languages/chinese/tone/ch1.png',event);return false;" onclick="document.getElementById('aud1').play()">
+<audio id="aud2" preload="none">
+   <source src="appendix/languages/chinese/tone/ch2.wav" type="audio/wav" />
+   <source src="appendix/languages/chinese/tone/ch2.mp3" type="audio/mpeg" />
+</audio>
+      <area shape="rect" coords="9,121,388,170" oncontextmenu="showspec('appendix/languages/chinese/tone/ch2.png',event);return false;" onclick="document.getElementById('aud2').play()">
+<audio id="aud3" preload="none">
+   <source src="appendix/languages/chinese/tone/ch3.wav" type="audio/wav" />
+   <source src="appendix/languages/chinese/tone/ch3.mp3" type="audio/mpeg" />
+</audio>
+      <area shape="rect" coords="10,177,386,219" oncontextmenu="showspec('appendix/languages/chinese/tone/ch3.png',event);return false;" onclick="document.getElementById('aud3').play()">
+<audio id="aud4" preload="none">
+   <source src="appendix/languages/chinese/tone/ch5.wav" type="audio/wav" />
+   <source src="appendix/languages/chinese/tone/ch5.mp3" type="audio/mpeg" />
+</audio>
+      <area shape="rect" coords="7,233,391,282" oncontextmenu="showspec('appendix/languages/chinese/tone/ch5.png',event);return false;" onclick="document.getElementById('aud4').play()">
+    </map>
+  
+<div class="spectro" id="specdiv"> <img id="spectrogram" src="" alt="" onload="position_sgram()"></div>
+</div>
+</div>
+</div>
+</body>

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+     <title>Perception experiment 1</title>
+</head>
+<body>
+<div id="container">
+
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+<P><A HREF="chapter15.html">return to chapter15 index</A></P>
+<P>
+  
+    Perception experiment 1
+  
+</P>
+<P>
+  
+&nbsp;
+  
+</P>
+<P>Click on the sentence below to hear it:</P>
+<audio id="aud1" preload="none">
+   <audio id="aud1" preload="none"> 
+   <source src="vowels/chapter15/jane.wav" type="audio/wav"/>
+   <source src="vowels/chapter15/jane.mp3" type="audio/mpeg" />
+</audio>
+   <p><button type="button" onclick="document.getElementById('aud1').play();"
+      oncontextmenu="showspec('vowels/chapter15/jane.png',event);return false;"/>
+      <div class="header2 noSelect">They thought it was Jane who could be brave and in the team.</div>
+   </button></p>
+<P>When you hear this sentence again there will be an &quot;<B>s&quot;</B> from another sentence superimposed on it. Your task is to say on which word or between which words this superimposed speech sound occurs.</P>
+<P>Click on the sentence belowto hear it with the superimposed &quot;<B>s&quot;</B>.</P>
+<P>Listen to this sentence only once before saying where the &quot;<B>s&quot;</B> occurs.</P>
+<audio id="aud2" preload="none">
+   <audio id="aud2" preload="none"> 
+   <source src="vowels/chapter15/janeands.wav" type="audio/wav"/>
+   <source src="vowels/chapter15/janeands.mp3" type="audio/mpeg" />
+</audio>
+   <p><button type="button" onclick="document.getElementById('aud2').play();"
+      oncontextmenu="showspec('vowels/chapter15/janeands.png',event);return false;"/>
+      <div class="header2 noSelect">They thought it was Jane who could be brave and in the team.</div>
+   </button></p>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>
+  
+    <A HREF="ans1.html">Answer</A><BR>
+    <BR>
+  
+<div class="spectro" id="specdiv"> <img id="spectrogram" src="" alt="" onload="position_sgram()"></div>
+</div>
+</div>
+</div>
+</body>

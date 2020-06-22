@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+     <title>Vowels</title>
+</head>
+<body>
+<div id="container">
+
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+<P><A HREF="chapter3.html">return to chapter 3 index</A></P>
+<P>&nbsp;</P>
+<audio id="aud1" preload="none">
+   <audio id="aud1" preload="none"> 
+   <source src="vowels/chapter3/spanish.wav" type="audio/wav"/>
+   <source src="vowels/chapter3/spanish.mp3" type="audio/mpeg" />
+</audio>
+   <p><button type="button" onclick="document.getElementById('aud1').play();"
+      oncontextmenu="showspec('vowels/chapter3/spanish.png',event);return false;"/>
+      <div class="header2 noSelect">To hear the Spanish vowels click here</div>
+   </button></p>
+<audio id="aud2" preload="none">
+   <audio id="aud2" preload="none"> 
+   <source src="vowels/chapter3/hawaiian.wav" type="audio/wav"/>
+   <source src="vowels/chapter3/hawaiian.mp3" type="audio/mpeg" />
+</audio>
+   <p><button type="button" onclick="document.getElementById('aud2').play();"
+      oncontextmenu="showspec('vowels/chapter3/hawaiian.png',event);return false;"/>
+      <div class="header2 noSelect">To hear the Hawaiian vowels click here</div>
+   </button></p>
+<audio id="aud3" preload="none">
+   <audio id="aud3" preload="none"> 
+   <source src="vowels/chapter3/swahili.wav" type="audio/wav"/>
+   <source src="vowels/chapter3/swahili.mp3" type="audio/mpeg" />
+</audio>
+   <p><button type="button" onclick="document.getElementById('aud3').play();"
+      oncontextmenu="showspec('vowels/chapter3/swahili.png',event);return false;"/>
+      <div class="header2 noSelect">To hear the Swahili vowels click here</div>
+   </button></p>
+<audio id="aud4" preload="none">
+   <audio id="aud4" preload="none"> 
+   <source src="vowels/chapter3/japanese.wav" type="audio/wav"/>
+   <source src="vowels/chapter3/japanese.mp3" type="audio/mpeg" />
+</audio>
+   <p><button type="button" onclick="document.getElementById('aud4').play();"
+      oncontextmenu="showspec('vowels/chapter3/japanese.png',event);return false;"/>
+      <div class="header2 noSelect">To hear the Japanese vowels click here</div>
+   </button></p>
+<P>&nbsp;</P>
+<P ALIGN=CENTER><IMG src="vowels/chapter3/table3.gif"WIDTH="320" HEIGHT="256" ALIGN="BOTTOM" BORDER="2" NATURALSIZEFLAG="3">
+<div class="spectro" id="specdiv"> <img id="spectrogram" src="" alt="" onload="position_sgram()"></div>
+</div>
+</div>
+</div>
+</body></HTML>

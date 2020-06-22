@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+     <title>Chapter 3: X-ray movies</title>
+</head>
+<body>
+<div id="container">
+
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+
+<h1>Chapter 3: X-ray movies</h1>
+<p>These x-ray movies illustrate the pronuncition of English consonants, as spoken by Prof. Ken Stevens  (a native of Toronto, Canada)</p>
+
+<h2>Part 1: Place of Articulation</h2>
+
+<audio id="aud1" preload="none">
+   <source src="course/chapter3/clip_2.wav" type="audio/wav"/>
+   <source src="course/chapter3/clip_2.mp3" type="audio/mpeg" />
+</audio>
+
+<div style="font-size:1.5em"> <a onclick="document.getElementById('aud1').play();" oncontextmenu="showspec('course/chapter3/clip_2.png',event); return false;">həpɑ, hətɑ, həkɑ</a></div>
+
+<video  controls height="360" width="480" src="course/chapter3/clip_2.mp4"></video>
+
+<h2>Part 2: Manner of Articulation</h2>
+<audio id="aud2" preload="none">
+   <source src="course/chapter3/clip_3.wav" type="audio/wav"/>
+   <source src="course/chapter3/clip_3.mp3" type="audio/mpeg" />
+</audio>
+
+<div style="font-size:1.5em"><a onclick="document.getElementById('aud2').play();" oncontextmenu="showspec('course/chapter3/clip_3.png',event); return false;">hədɛ, hənɛ, həsɛ</a></div>
+
+<video  controls height="360" width="480" src="course/chapter3/clip_3.mp4"></video>
+
+
+<div class="spectro" id="specdiv"> <img id="spectrogram" src="" alt="" onload="position_sgram()"></div>
+</div>
+</div>
+</div>
+</body></html>

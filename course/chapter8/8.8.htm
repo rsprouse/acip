@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+     <title>Chapter 8 - Figure 8.8</title>
+</head>
+<body>
+<div id="container">
+
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+<h1>Chapter 8 - Figure 8.8</h1>
+<p>Spectrograms of<em> a Pam, a tan,   a kang.</em> The arrows indicate the closure for the nasal consonants.</p>
+<audio id="aud1" preload="none">
+   <source src="course/chapter8/fig8_8.wav" type="audio/wav" />
+   <source src="course/chapter8/fig8_8.mp3" type="audio/mpeg" />
+</audio>
+
+
+<img src="course/chapter8/images/Image11.gif" width="668" height="280" 
+      oncontextmenu="showspec('course/chapter8/fig8_8.png',event);return false;" onclick="document.getElementById('aud1').play()">
+
+<div class="spectro" id="specdiv"> <img id="spectrogram" src="" alt="" onload="position_sgram()"></div>
+</div>
+</div>
+</div>
+</body></html>

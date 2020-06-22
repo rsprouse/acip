@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+   <script src="js/recorder.js"> </script>
+   <script src="js/course_recorder.js"></script>
+
+     <title>Wangurri</title>
+</head>
+<body>
+<div id="container">
+
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+    <div id="recorder"></div>
+
+      <p><img src="appendix/languages/wangurri/wangurri.gif" width="490" height="311" usemap="#map1" class="border"></p>
+      <p><img src="appendix/languages/wangurri/wangurriwords.gif" width="467" height="202" class="border"></p>
+      <p><img src="appendix/languages/wangurri/wangurrimap.gif" width="436" height="311" class="border"></p>
+
+          <map name="map1">
+<audio id="aud1" preload="none">
+   <source src="appendix/languages/wangurri/w12.wav" type="audio/wav" />
+   <source src="appendix/languages/wangurri/w12.mp3" type="audio/mpeg" />
+</audio>
+            <area shape="circle" coords="162,295,15" oncontextmenu="showspec('appendix/languages/wangurri/w12.png',event);return false;" onclick="document.getElementById('aud1').play()">
+<audio id="aud2" preload="none">
+   <source src="appendix/languages/wangurri/w11.wav" type="audio/wav" />
+   <source src="appendix/languages/wangurri/w11.mp3" type="audio/mpeg" />
+</audio>
+            <area shape="circle" coords="100,297,15" oncontextmenu="showspec('appendix/languages/wangurri/w11.png',event);return false;" onclick="document.getElementById('aud2').play()">
+<audio id="aud3" preload="none">
+   <source src="appendix/languages/wangurri/w6.wav" type="audio/wav" />
+   <source src="appendix/languages/wangurri/w6.mp3" type="audio/mpeg" />
+</audio>
+            <area shape="rect" coords="355,208,451,243" oncontextmenu="showspec('appendix/languages/wangurri/w6.png',event);return false;" onclick="document.getElementById('aud3').play()">
+<audio id="aud4" preload="none">
+   <source src="appendix/languages/wangurri/w3.wav" type="audio/wav" />
+   <source src="appendix/languages/wangurri/w3.mp3" type="audio/mpeg" />
+</audio>
+            <area shape="rect" coords="343,89,439,124" oncontextmenu="showspec('appendix/languages/wangurri/w3.png',event);return false;" onclick="document.getElementById('aud4').play()">
+<audio id="aud5" preload="none">
+   <source src="appendix/languages/wangurri/w2.wav" type="audio/wav" />
+   <source src="appendix/languages/wangurri/w2.mp3" type="audio/mpeg" />
+</audio>
+            <area shape="rect" coords="196,90,292,125" oncontextmenu="showspec('appendix/languages/wangurri/w2.png',event);return false;" onclick="document.getElementById('aud5').play()">
+<audio id="aud6" preload="none">
+   <source src="appendix/languages/wangurri/w5.wav" type="audio/wav" />
+   <source src="appendix/languages/wangurri/w5.mp3" type="audio/mpeg" />
+</audio>
+            <area shape="rect" coords="204,205,300,240" oncontextmenu="showspec('appendix/languages/wangurri/w5.png',event);return false;" onclick="document.getElementById('aud6').play()">
+<audio id="aud7" preload="none">
+   <source src="appendix/languages/wangurri/w4.wav" type="audio/wav" />
+   <source src="appendix/languages/wangurri/w4.mp3" type="audio/mpeg" />
+</audio>
+            <area shape="rect" coords="60,209,156,244" oncontextmenu="showspec('appendix/languages/wangurri/w4.png',event);return false;" onclick="document.getElementById('aud7').play()">
+<audio id="aud8" preload="none">
+   <source src="appendix/languages/wangurri/w1.wav" type="audio/wav" />
+   <source src="appendix/languages/wangurri/w1.mp3" type="audio/mpeg" />
+</audio>
+            <area shape="rect" coords="53,90,149,125" oncontextmenu="showspec('appendix/languages/wangurri/w1.png',event);return false;" onclick="document.getElementById('aud8').play()">
+          </map>
+
+<div class="spectro" id="specdiv"> <img id="spectrogram" src="" alt="" onload="position_sgram()"></div>
+</div>
+</div>
+</div>
+</body>
+</html>

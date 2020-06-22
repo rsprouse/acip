@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+   <script src="js/exercises.js"></script>
+   <script src="js/hw/exercise4H.js"></script>  
+
+     <title>Chapter 4</title>
+</head>
+<body onload="initialize()">
+<div id="container">
+
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+
+<h1>Chapter 4 - Homework Exercise H</h1> 
+
+<p>The six vowel allophonic patterns at the end of chapter 4 were:</p>
+<p class="indent">1. vowels tend to be longer in open syllables than in closed ones, and longer before voiced consonants than voiceless ones..</p>
+<p class="indent">2. vowels tend to be longer in stressed syllables.</p>
+<p class="indent">3. vowels tend to be longest in monosyllabic words, then words with two syllables, and shortest in longer words.</p>
+<p class="indent">4. a reduced vowel may be voiceless after a voiceless stop.</p>
+<p class="indent">5. vowels tend to be nasalized in syllables closed by a nasal consonant.</p>
+<p class="indent">6. vowels tend to be retracted before syllable final [l̴].</p>
+
+<p>Here is an example of one of these patterns.  Which pattern is it?
+
+<p><span id="question"></span>
+<input id="answerbox" type="text" onkeydown="if (event.keyCode == 13) check_answer()">
+<span id="feedback"></span></p>
+<p style="font-size:small">Correct: <span id="correct">0</span> ---- Run: <span id="run">0</span></p>
+
+</div>
+</div>
+</div>
+</body></html>

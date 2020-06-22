@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+   <script src="js/exercises.js"></script>
+   <script src="js/hw/exercise1C.js"></script>  
+
+     <title>Chapter 1</title>
+</head>
+<body onload="initialize()">
+<div id="container">
+
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+
+<h1>Chapter 1 - Homework Exercise C</h1> 
+<div class="map"><img src="course/chapter1/hw/ex1C.png" width="300" class="border"></div>
+
+<p>Identify the place or manner of articulation depicted in figures (a) through (g).  Hint: these are for English consonants, and not all manners of articulation are produced at every place in English. For example we have a labiodental fricative, but not a labiodental stop.</p>
+
+<p>Question: <span id="question"></span>
+<input id="answerbox" type="text" onkeydown="if (event.keyCode == 13) check_answer()">
+</p><p><span id="feedback"></span></p>
+<p style="font-size:small">Correct: <span id="correct">0</span> ---- Run: <span id="run">0</span></p>
+
+</div>
+</div>
+</div>
+</body></html>

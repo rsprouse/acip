@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+<script>
+var wavs = new Array();
+var mp3s = new Array();
+var pngs = new Array();
+var local = "course/chapter8/chapter8_sounds/";
+wavs[0]="heed_kj.wav"; mp3s[0]="heed_kj.mp3"; pngs[0]="heed_kj.png";
+wavs[1]="hid_kj.wav"; mp3s[1]="hid_kj.mp3"; pngs[1]="hid_kj.png";
+wavs[2]="head_kj.wav"; mp3s[2]="head_kj.mp3"; pngs[2]="head_kj.png";
+wavs[3]="had_kj.wav"; mp3s[3]="had_kj.mp3"; pngs[3]="had_kj.png";
+wavs[4]="hod_kj.wav"; mp3s[4]="hod_kj.mp3"; pngs[4]="hod_kj.png";
+wavs[5]="hawed_kj.wav"; mp3s[5]="hawed_kj.mp3"; pngs[5]="hawed_kj.png";
+wavs[6]="hood_kj.wav"; mp3s[6]="hood_kj.mp3"; pngs[6]="hood_kj.png";
+wavs[7]="whod_kj.wav"; mp3s[7]="whod_kj.mp3"; pngs[7]="whod_kj.png";
+var index=0;
+
+function next_file() {
+     index++;  if (index >= wavs.length) {index=0;}
+console.log(index);
+     var wavsrc = local+wavs[index];
+     var mp3src = local+mp3s[index];
+     var pngsrc = local+pngs[index];
+
+     document.getElementById("wavsrc").src = wavsrc;
+     document.getElementById("mp3src").src = mp3src;
+     document.getElementById("pngsrc").src = pngsrc;
+     document.getElementById("theaudio").load();
+}
+</script>
+
+     <title>Chapter 8 - hVd words</title>
+</head>
+<body>
+<div id="container">
+
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+
+<h1>Chapter 8 - hVd words</h1>
+
+<p>Spectrograms of the words<em> heed, hid, head, had, hod, hawed, hood, who&rsquo;d</em> as spoken by a male speaker of American English.&nbsp; This speaker is different from the two speakers shown in figures 8.4 and 8.5 in "Course".  See if you can measure his formants from these spectrograms and plot his vowel space as in figure 8.6.  This will highlight a difference between "General American" and the English spoken in the western half of the U.S.</p>
+
+<audio id="theaudio" preload="none">
+  <source id="wavsrc" src="course/chapter8/chapter8_sounds/heed_kj.wav" type="audio/wav" />
+  <source id="mp3src" src="course/chapter8/chapter8_sounds/heed_kj.mp3" type="audio/mpeg" />
+</audio>
+
+<p><img id="pngsrc" src="course/chapter8/chapter8_sounds/heed_kj.png" onclick="theaudio.play()" class="border"></p>
+<input type="button" onclick="next_file()" value="see the next vowel">
+
+</div>
+</div>
+</div>
+</body></html>

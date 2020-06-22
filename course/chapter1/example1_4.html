@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+
+     <title>Chapter 1</title>
+</head>
+<body>
+<div id="container">
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+
+<h1>Example 1.4</h1>
+<p class="indent">Where spectrograms come from.</p> 
+<div id="infobox" style="padding:10px; width:400px; border:1px solid;">Click on the graph for some annotation.</div>
+<img src="course/chapter1/spectrogram_illustration.png" class="border" usemap="#spectro" width="480" height="441"/>
+</p>
+
+<map name="spectro">
+<audio id="aud12" preload="none">
+   <source src="course/ipachart/ipaSOUNDS/Con-33a.wav" type="audio/wav"/>
+   <source src="course/ipachart/ipaSOUNDS/Con-33a.mp3" type="audio/mpeg" />
+</audio>
+   <area shape="rect" coords="218,6,331,31"  onclick="document.getElementById('aud12').play();"
+      oncontextmenu="showspec('course/ipachart/ipaSOUNDS/Con-33a.png',event);return false;"/>
+   <area shape="rect" coords="239,260,296,285"  onclick="document.getElementById('aud12').play();"
+      oncontextmenu="showspec('course/ipachart/ipaSOUNDS/Con-33a.png',event);return false;"/>
+   <area shape="rect" coords="185,34,358,110" onclick="document.getElementById('infobox').innerHTML = 'This is the acoustic waveform as recorded by a microphone.';">
+   <area shape="rect" coords="71,144,204,239" onclick="document.getElementById('infobox').innerHTML= 'Spectrum analysis of a small window of time in the waveform results in a spectrum - in this case of [ʃ].';">
+   <area shape="rect" coords="305,172,467,244" onclick="document.getElementById('infobox').innerHTML = 'This is the frequency spectrum of a small window of time from the vowel [ɑ].';">
+   <area shape="rect" coords="92,281,187,423" onclick="document.getElementById('infobox').innerHTML = 'Now flip the spectrum on it\'s side and stack lots of them together to get a spectrogram.';">
+   <area shape="rect" coords="194,279,317,423" onclick="document.getElementById('infobox').innerHTML ='This spectrogram is composed of 213 spectra - one every 2 milliseconds.';">
+   <area shape="rect" coords="332,285,426,424" onclick="document.getElementById('infobox').innerHTML = 'Flip the spectrum on its side and color code it - darker color for greater amplitude.';">
+</map>
+
+
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+   <script src="js/recorder.js"> </script>
+   <script src="js/course_recorder.js"></script>
+
+     <title>Chapter 1 - example 1.7</title>
+</head>
+<body>
+<div id="container">
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+  <div id="recorder"></div>
+
+<h1>Example 1.7</h1>
+<p> Illustrating differences in intonation:</p> 
+
+<p class="indent"><em> This is my father. -- Is this your father?</em></p> 
+<p class="indent"><em>This is a cat. -- This is a cat? &nbsp;</em></p>
+
+<audio id="aud10" preload="none">
+   <source src="course/chapter1/sounds1.1/peterfathercat.wav" type="audio/wav"/>
+   <source src="course/chapter1/sounds1.1/peterfathercat.mp3" type="audio/mpeg" />
+</audio>
+   <p class="indent"><button type="button" onclick="document.getElementById('aud10').play();"
+      oncontextmenu="showspec('course/chapter1/sounds1.1/peterfathercat.png',event);return false;"/>
+      <div class="noSelect">British English</div>
+   </button>
+
+<audio id="aud11" preload="none">
+   <source src="course/chapter1/sounds1.1/bruce1.5.wav" type="audio/wav"/>
+   <source src="course/chapter1/sounds1.1/bruce1.5.mp3" type="audio/mpeg" />
+</audio>
+   <button type="button" onclick="document.getElementById('aud11').play();"
+      oncontextmenu="showspec('course/chapter1/sounds1.1/bruce1.5.png',event);return false;"/>
+      <div class="noSelect">American English</div>
+   </button></p>
+
+
+<div class="spectro" id="specdiv"> <img id="spectrogram" src="" alt="" onload="position_sgram()"></div>
+</div>
+</div>
+</div>
+</body></html>

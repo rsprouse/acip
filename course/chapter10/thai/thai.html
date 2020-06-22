@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta name="description" content="A Course in Phonetics">
+   <meta name="keywords" content="Phonetics,IPA,articulation,speech">
+   <meta name="author" content="Keith Johnson">
+   <meta charset="UTF-8">
+
+    <base href="https://corpus.linguistics.berkeley.edu/acip/"></base>
+   <link rel="stylesheet" type="text/css" href="styles/course_layout.css" />
+   <link rel="stylesheet" type="text/css" href="styles/course.css" />
+   <script  src="js/jquery-1.10.1.min.js"> </script> 
+   <script src="js/course.js"> </script> 
+   <script src="js/addmenu.js"></script>
+  <script src="js/recorder.js"> </script>
+   <script src="js/course_recorder.js"></script>
+
+     <title>Thai</title>
+</head>
+<body>
+<div id="container">
+
+
+    <div id="title"><a href="">A Course in Phonetics</a> <span id="UCB"><a href="http://linguistics.berkeley.edu">UC Berkeley Linguistics</a></span></div>
+
+
+<div id="wrapper">
+    <div id="menu"></div>
+  <div id="content">
+    <div id="recorder"></div>
+
+<h2>Thai tones</h2>
+
+
+  <p><img src="course/chapter10/thai/tm1.gif" width="389" height="209" usemap="#thai" class="border"></p>
+
+  <p>8 Phoneticians sat around the UCLA Phonetics lab and discussed these labels for the tones. They listened repeatedly to the words and then measured the pitch (fundamental frequency) values and came up with following thoughts for this one speaker on this one occasion.</p>
+ 
+  <p>The first column is the gloss. The second column is the estimated tone level by listening. The third column is the tone level based on the pitch analysis. The fourth column is the measured frequency range. The last column is the traditional name for this tone.</p>
+
+  <table border="1" cellpadding="2" cellspacing="2" width="265" bgcolor="white">
+    <tr>
+      <td><span class="style1">name</span></td>
+      <td nowrap bgcolor="white"><span class="style2">2 1</span></td>
+      <td width="54" nowrap><span class="style2">3 2</span></td>
+      <td nowrap><span class="style2">100 - 89</span></td>
+      <td><span class="style2">low</span></td>
+    </tr>
+    <tr>
+      <td><span class="style2"><i>face</i></span></td>
+      <td nowrap bgcolor="white"><span class="style2">4 1</span></td>
+      <td width="54" nowrap><span class="style2">5 1</span></td>
+      <td nowrap><span class="style2">140 - 70</span></td>
+      <td><span class="style2">falling</span></td>
+    </tr>
+    <tr>
+      <td><span class="style2"><i>aunt</i></span></td>
+      <td nowrap bgcolor="white"><span class="style2">3 5</span></td>
+      <td width="54" nowrap><span class="style2">3 5</span></td>
+      <td nowrap><span class="style2">105 - 140</span></td>
+      <td><span class="style2">high</span></td>
+    </tr>
+    <tr>
+      <td><span class="style2"><i>thick</i></span></td>
+      <td nowrap bgcolor="white"><span class="style2">2 1 3</span></td>
+      <td width="54" nowrap><span class="style2">3 2 4</span></td>
+      <td nowrap><span class="style2">100 - 85 - 120</span></td>
+      <td><span class="style2">rising</span></td>
+    </tr>
+    <tr>
+      <td><span class="style2"><i>field</i></span></td>
+      <td nowrap bgcolor="white"><span class="style2">3 2 3</span></td>
+      <td width="54" nowrap><span class="style2">3 1 3</span></td>
+      <td nowrap><span class="style2">100 - 93</span></td>
+      <td><span class="style2">mid</span></td>
+    </tr>
+  </table>
+
+<map name="thai">
+<audio id="aud1" preload="none">
+   <source src="course/chapter10/thai/25.wav" type="audio/wav" />
+   <source src="course/chapter10/thai/25.mp3" type="audio/mpeg" />
+</audio>
+        <area shape="rect" coords="42,157,352,194" oncontextmenu="showspec('course/chapter10/thai/25.png',event);return false;" onclick="document.getElementById('aud1').play()">
+<audio id="aud2" preload="none">
+   <source src="course/chapter10/thai/24.wav" type="audio/wav" />
+   <source src="course/chapter10/thai/24.mp3" type="audio/mpeg" />
+</audio>
+        <area shape="rect" coords="19,124,373,152" oncontextmenu="showspec('course/chapter10/thai/24.png',event);return false;" onclick="document.getElementById('aud2').play()">
+<audio id="aud3" preload="none">
+   <source src="course/chapter10/thai/23.wav" type="audio/wav" />
+   <source src="course/chapter10/thai/23.mp3" type="audio/mpeg" />
+</audio>
+        <area shape="rect" coords="50,89,378,125" oncontextmenu="showspec('course/chapter10/thai/23.png',event);return false;" onclick="document.getElementById('aud3').play()">
+<audio id="aud4" preload="none">
+   <source src="course/chapter10/thai/22.wav" type="audio/wav" />
+   <source src="course/chapter10/thai/22.mp3" type="audio/mpeg" />
+</audio>
+        <area shape="rect" coords="59,41,361,76" oncontextmenu="showspec('course/chapter10/thai/22.png',event);return false;" onclick="document.getElementById('aud4').play()">
+<audio id="aud5" preload="none">
+   <source src="course/chapter10/thai/21.wav" type="audio/wav" />
+   <source src="course/chapter10/thai/21.mp3" type="audio/mpeg" />
+</audio>
+        <area shape="rect" coords="55,7,362,40" oncontextmenu="showspec('course/chapter10/thai/21.png',event);return false;" onclick="document.getElementById('aud5').play()">
+      </map>
+
+<div class="spectro" id="specdiv"> <img id="spectrogram" src="" alt="" onload="position_sgram()"></div>
+</div>
+</div>
+</div>
+</body>

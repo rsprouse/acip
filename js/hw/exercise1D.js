@@ -1,0 +1,43 @@
+// must assume the existence of some variables (defined in exercises.js)
+
+exerciseName = "1D";
+mincorrect=18;
+minrun=3;
+
+quest[0]="Which of these starts with a bilabial consonant: met or net?"; answer[0]="met";
+quest[1]="Which of these starts with a bilabial consonant: set or bet?"; answer[1]="bet";
+quest[2]="Which of these starts with a bilabial consonant: let or pet?"; answer[2]="pet";
+quest[3]="Which of these starts with a velar consonant: knot or got?"; answer[3]="got";
+quest[4]="Which of these starts with a velar consonant: lot or cot?"; answer[4]="cot";
+quest[5]="Which of these starts with a labiodental consonant: fat or cat?"; answer[5]="fat";
+quest[6]="Which of these starts with a labiodental consonant: mat or vat?"; answer[6]="vat";
+quest[7]="Which of these starts with a alveolar consonant: quip or dip?"; answer[7]="dip";
+quest[8]="Which of these starts with a alveolar consonant: sip or pip?"; answer[8]="sip";
+quest[9]="Which of these starts with a alveolar consonant: whip or nip?"; answer[9]="nip";
+quest[10]="Which of these starts with a dental consonant: shy or thigh?"; answer[10]="thigh";
+quest[11]="Which of these starts with a post-alveolar consonant: shy or thy?"; answer[11]="shy";
+quest[12]="Which of these ends with a fricative consonant: ray or rough?"; answer[12]="rough";
+quest[13]="Which of these ends with a fricative consonant: breathe or bring?"; answer[13]="breathe";
+quest[14]="Which of these ends with a fricative consonant: race or real?"; answer[14]="race";
+quest[15]="Which of these ends with a fricative consonant: reap or wreath?"; answer[15]="wreath";
+quest[16]="Which of these ends with a nasal consonant: dumb or dull?"; answer[16]="dumb";
+quest[17]="Which of these ends with a stop consonant: graph or hack?"; answer[17]="hack";
+quest[18]="Which of these ends with a stop consonant: lip or pill?"; answer[18]="lip";
+quest[19]="Which of these ends with a stop consonant: dog or laugh?"; answer[19]="dog";
+quest[20]="Which of these starts with a lateral consonant: rob or lull?"; answer[20]="lull";
+quest[21]="Which of these starts with an approximant consonant: you or do?"; answer[21]="you";
+quest[22]="Which of these starts with an approximant consonant: one or sun?"; answer[22]="one";
+quest[23]="Which of these ends with an affricate consonant: back or much?"; answer[23]="much";
+quest[24]="Which of these ends with an affricate consonant: edge or ooze?"; answer[24]="edge";
+quest[25]="Which of these medial consonants is voiced: robber or hopper?"; answer[25]="robber";
+quest[26]="Which of these medial consonants is voiced: massive or leisure?"; answer[26]="leisure";
+quest[27]="Which of these has a high vowel: suit or sat?"; answer[27]="suit";
+quest[28]="Which of these has a high vowel: mud or meet?"; answer[28]="meet";
+quest[29]="Which of these has a low vowel: lad or load?"; answer[29]="lad";
+quest[30]="Which of these has a low vowel: weed or wad?"; answer[30]="wad";
+quest[31]="Which of these has a front vowel: caught or gate?"; answer[31]="gate";
+quest[32]="Which of these has a front vowel: kit or put?"; answer[32]="kit";
+quest[33]="Which of these has a back vowel: made or coop?"; answer[33]="coop";
+quest[34]="Which of these has a back vowel: cop or weep?"; answer[34]="cop";
+quest[35]="Which of these has a round vowel: him or who?"; answer[35]="who";
+quest[36]="Which of these has a round vowel: low or lay?"; answer[36]="low";
